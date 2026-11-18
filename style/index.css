@@ -1,0 +1,271 @@
+.jd-editing > .jp-Cell-inputWrapper {
+  display: none;
+}
+
+.jd-editor {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.jd-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding: 0 0 8px;
+}
+
+.jd-toolbar button,
+.jd-toolbar select {
+  min-height: 30px;
+  padding: 4px 8px;
+  color: var(--jp-ui-font-color1);
+  background: var(--jp-layout-color1);
+  border: 1px solid var(--jp-border-color1);
+  border-radius: 3px;
+  font: inherit;
+}
+
+.jd-toolbar button[aria-pressed="true"] {
+  color: var(--jp-brand-color1);
+  border-color: var(--jp-brand-color1);
+}
+
+.jd-toolbar .jd-icon-button,
+.jd-toolbar .jd-widths button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+}
+
+.jd-icon-button svg,
+.jd-menu summary svg {
+  width: 20px;
+  height: 20px;
+}
+
+.jd-highlighter {
+  box-shadow: inset 0 -4px #f5d442;
+}
+
+.jd-fill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.jd-widths {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.jd-widths span {
+  display: block;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.jd-colors,
+.jd-favorites {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.jd-toolbar .jd-favorites button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 30px;
+  padding: 3px;
+}
+
+.jd-favorites span {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--jp-border-color1);
+  border-radius: 50%;
+}
+
+.jd-menu {
+  position: relative;
+}
+
+.jd-menu summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 32px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 3px;
+}
+
+.jd-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.jd-menu[open] summary,
+.jd-menu summary:hover {
+  background: var(--jp-layout-color2);
+}
+
+.jd-menu-list {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 0;
+  min-width: max-content;
+  padding: 4px;
+  background: var(--jp-layout-color1);
+  border: 1px solid var(--jp-border-color1);
+  border-radius: 4px;
+  box-shadow: 0 3px 8px #0004;
+}
+
+.jd-toolbar .jd-menu-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  border: 0;
+  text-align: left;
+}
+
+.jd-menu-option:hover {
+  background: var(--jp-layout-color2);
+}
+
+.jd-menu-indicator {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.jd-menu-option[aria-pressed="true"] .jd-menu-indicator {
+  border: 5px solid var(--jp-brand-color1);
+  width: 8px;
+  height: 8px;
+}
+
+.jd-line-preview {
+  width: 24px;
+  border-top: 2px solid currentColor;
+}
+
+.jd-line-dashed { border-top-style: dashed; }
+.jd-line-dotted { border-top-style: dotted; }
+.jd-line-dashdot {
+  border: 0;
+  height: 2px;
+  background: repeating-linear-gradient(to right, currentColor 0 8px, transparent 8px 11px, currentColor 11px 13px, transparent 13px 16px);
+}
+
+.jd-toolbar input[type="color"] {
+  width: 34px;
+  height: 30px;
+  padding: 2px;
+  border: 1px solid var(--jp-border-color1);
+  border-radius: 3px;
+  background: var(--jp-layout-color1);
+}
+
+.jd-toolbar input[type="range"] {
+  width: 90px;
+  accent-color: var(--jp-brand-color1);
+}
+
+.jd-toolbar .jd-done {
+  margin-left: auto;
+}
+
+.jd-viewport {
+  width: 100%;
+  height: min(75vh, 900px);
+  min-height: 320px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--jp-border-color1);
+  background: #fff;
+}
+
+.jd-stage {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  background-image: linear-gradient(to right, rgba(142, 160, 170, 0.32) 1px, transparent 1px), linear-gradient(to bottom, rgba(142, 160, 170, 0.32) 1px, transparent 1px);
+  background-size: var(--jd-grid-size) var(--jd-grid-size);
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.jd-tile {
+  position: absolute;
+  left: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.jd-overlay {
+  z-index: 1;
+}
+
+.jd-selection {
+  position: absolute;
+  z-index: 2;
+  box-sizing: border-box;
+  border: 1px dashed #3086cf;
+  background: #3086cf1a;
+  pointer-events: none;
+}
+
+.jd-selection-handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 1px solid #176aaf;
+  background: #fff;
+  pointer-events: auto;
+}
+
+.jd-selection-resize {
+  right: -6px;
+  bottom: -6px;
+  cursor: nwse-resize;
+}
+
+.jd-selection-rotate {
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  cursor: grab;
+}
+
+.jd-stage.jd-erasing {
+  cursor: none;
+}
+
+.jd-eraser-cursor {
+  position: absolute;
+  z-index: 3;
+  box-sizing: border-box;
+  border: 1px solid #222;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}

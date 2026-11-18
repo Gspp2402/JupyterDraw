@@ -1,0 +1,27 @@
+{
+  "name": "jupyter-draw",
+  "version": "0.1.0",
+  "description": "Celle di disegno per JupyterLab e Notebook",
+  "main": "lib/index.js",
+  "style": "style/index.css",
+  "files": ["lib/**/*", "style/**/*"],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "build": "jupyter labextension build .",
+    "clean-images": "node scripts/clean-images.mjs"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^4.6.4",
+    "@jupyterlab/apputils": "^4.6.4",
+    "@jupyterlab/notebook": "^4.6.4",
+    "@jupyterlab/ui-components": "^4.6.4",
+    "@lumino/widgets": "^2.7.2"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "^4.5.11"
+  },
+  "jupyterlab": {
+    "extension": true,
+    "outputDir": "jupyter_draw/labextension"
+  }
+}

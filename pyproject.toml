@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling>=1.5"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter-draw"
+version = "0.1.0"
+description = "Celle di disegno per JupyterLab e Notebook"
+requires-python = ">=3.9"
+dependencies = ["jupyterlab>=4.6.4,<5"]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["jupyter_draw"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"jupyter_draw/labextension" = "share/jupyter/labextensions/jupyter-draw"
